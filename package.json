@@ -1,0 +1,27 @@
+{
+  "name": "nuxt-typescript-kit",
+  "description": "Nuxt Typescript Kit",
+  "version": "2.14.4",
+  "private": true,
+  "dependencies": {
+    "@nuxt/typescript-runtime": "1.0.0",
+    "@nuxtjs/axios": "5.12.2",
+    "nuxt": "2.14.4",
+    "nuxt-property-decorator": "2.7.2",
+    "vuex-class": "0.3.2"
+  },
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts build --target static && nuxt-ts generate"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.5",
+    "@nuxt/typescript-build": "2.0.2",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "sass-loader": "^10.0.1"
+  }
+}

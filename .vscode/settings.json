@@ -1,0 +1,13 @@
+{
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.format.semicolons": "remove",
+  "typescriptHero.imports.insertSemicolons": false,
+  "prettier.semi": false,
+  "prettier.tabWidth": 2,
+  "prettier.jsxSingleQuote": true,
+  "typescriptHero.imports.stringQuoteStyle": "'"
+}

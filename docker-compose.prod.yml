@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  node:
+    image: node:12-alpine
+    user: node
+    working_dir: /home/node/app
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+    expose:
+      - 3000
+    volumes:
+      - ./:/home/node/app
+    labels:
+      traefik.enable: 'true'
+      traefik.frontend.rule: 'Host: ${APP_DOMAIN}'
+    networks:
+      - web
+    command: sh -c 'yarn && yarn build && yarn start'
+    restart: ${RESTART}
+
+networks:
+  web:
+    external: true
