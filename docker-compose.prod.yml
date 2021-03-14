@@ -12,6 +12,7 @@ services:
       - 3000
     volumes:
       - ./:/home/node/app
+      - ./docker/node/bootstrap.sh:/usr/local/bin/bootstrap.sh
     labels:
       traefik.enable: 'true'
       traefik.frontend.rule: 'Host: ${APP_DOMAIN}'
