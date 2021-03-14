@@ -2,8 +2,8 @@ version: '3'
 
 services:
   node:
-    image: node:12-alpine
-    user: node
+    build:
+      context: docker/node
     working_dir: /home/node/app
     environment:
       HOST: 0.0.0.0

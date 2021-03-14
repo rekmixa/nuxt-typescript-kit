@@ -7,12 +7,8 @@ export function delay(ms: number) {
 }
 
 export async function playAudio(src: string) {
-  console.log(`Playing sound ${src} started...`)
-
   const audio = new Audio(src)
   await audio.play()
-
-  console.log(`Playing sound ${src} completed...`)
 }
 
 export function getTotalSecondsFromISODate(date: string): number | null {
@@ -45,16 +41,10 @@ export function getTotalSecondsFromISODate(date: string): number | null {
   return totalSeconds
 }
 
-export function copyTextToClipboard(text?: string) {
+export async function copyTextToClipboard(text?: string) {
   if (text === undefined) {
     return
   }
 
-  navigator.clipboard.writeText(text)
-    .then(() => {
-      console.log('Async: Copying to clipboard was successful!')
-    })
-    .catch(error => {
-      console.error('Async: Could not copy text: ', error)
-    })
+  await navigator.clipboard.writeText(text)
 }

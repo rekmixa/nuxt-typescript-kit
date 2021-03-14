@@ -1,7 +1,13 @@
-all: up logs
+all: git-pull up logs
+
+git-pull:
+	@git pull
+
+env:
+	@docker-compose run --rm node /bin/sh
 
 up:
-	@docker-compose up -d --remove-orphans --force-recreate
+	@docker-compose up -d --remove-orphans --force-recreate --build
 
 down:
 	@docker-compoes down
@@ -27,7 +33,7 @@ docker-compose-override:
 install: cp-env docker-compose-override up
 
 yarn-generate:
-	@yarn generate
+	@docker-compose run --rm node yarn generate
 
 create-zip-dir:
 	@test -d zip || mkdir zip

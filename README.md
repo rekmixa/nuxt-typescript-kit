@@ -14,6 +14,12 @@ make cp-env
 make install
 ```
 
+View docker container logs
+
+```bash
+make logs
+```
+
 ## Build Setup
 
 ```bash
@@ -29,3 +35,5 @@ To building for production you need to change `COMPOSE_FILE` param in *.env* to 
 ```bash
 make generate-zip
 ```
+
+##### For creating zip archieves you need to install *zip* dependency
