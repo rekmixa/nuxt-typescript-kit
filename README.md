@@ -28,15 +28,15 @@ make logs
 make
 ```
 
+### Building for production
+
+To building for production you need to change `COMPOSE_FILE` param in *.env* to *docker-compose.prod.yml* and follow the above steps
+
 ### Development
 
 ```bash
 make dev
 ```
-
-## Building for production
-
-To building for production you need to change `COMPOSE_FILE` param in *.env* to *docker-compose.prod.yml* and follow the above steps
 
 ## Generate dist and export it to zip-file
 
