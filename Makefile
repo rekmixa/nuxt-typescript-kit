@@ -51,3 +51,6 @@ create-zip-dist:
 zip-dist: create-zip-dir remove-old-zip-dist create-zip-dist
 
 generate-zip: yarn-generate zip-dist
+
+rm-git:
+	@rm -rf .git
