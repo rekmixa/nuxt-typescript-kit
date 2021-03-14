@@ -22,8 +22,16 @@ make logs
 
 ## Build Setup
 
+### Production
+
 ```bash
 make
+```
+
+### Development
+
+```bash
+make dev
 ```
 
 ## Building for production

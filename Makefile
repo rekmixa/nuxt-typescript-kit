@@ -1,5 +1,7 @@
 all: git-pull up logs
 
+dev: up logs
+
 git-pull:
 	@git pull
 
