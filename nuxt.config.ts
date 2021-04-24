@@ -27,8 +27,11 @@ export default {
     only: []
   },
   modules: [
+    'cookie-universal-nuxt',
     '@nuxtjs/axios',
   ],
-  plugins: [],
+  plugins: [
+    './plugins/example',
+  ],
   axios: {}
 }
