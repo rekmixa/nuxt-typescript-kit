@@ -1,30 +1,15 @@
-import Vuex from 'vuex'
-import type { Context as AppContext } from '@nuxt/types'
-import type { ActionContext, ActionTree, GetterTree, MutationTree } from 'vuex'
-import type { RootState } from '../types'
+import { Store } from 'vuex'
+import { initialiseStores } from '~/utils/store-accessor'
+import type { Context as Context } from '@nuxt/types'
+import type { ActionContext } from 'vuex'
 
-export const state = (): RootState => ({
-  done: {},
-  undone: {}
-})
+const initializer = (store: Store<any>) => initialiseStores(store)
 
-export const mutations: MutationTree<RootState> = {}
+export const plugins = [initializer]
+export * from '~/utils/store-accessor'
 
-export const getters: GetterTree<RootState, RootState> = {}
-
-interface Actions<S, R> extends ActionTree<S, R> {
-  nuxtServerInit(actionContext: ActionContext<S, R>, appContext: AppContext): void
-}
-
-export const actions: Actions<RootState, RootState> = {
-  async nuxtServerInit({ state, commit }, context): Promise<void> {
+export const actions = {
+  async nuxtServerInit(appContext: ActionContext<any, any>, context: Context): Promise<void> {
     console.log('Nuxt server initialized...')
   }
 }
-
-export const store = new Vuex.Store({
-  state,
-  mutations,
-  getters,
-  actions
-})
