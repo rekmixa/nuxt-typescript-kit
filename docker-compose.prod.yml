@@ -5,6 +5,10 @@ services:
     build:
       context: docker/node
     working_dir: /home/node/app
+    logging:
+      options:
+        max-size: '10m'
+        max-file: '3'
     environment:
       HOST: 0.0.0.0
       PORT: 3000
